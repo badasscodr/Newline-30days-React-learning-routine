@@ -13,9 +13,13 @@
   <body>
     <div id="app">
       <script type="text/babel">
-        let App = <h1>Hello World</h1>;
-        let mountCamp = document.querySelector('#app');
-        ReactDOM.render(App, mountCamp);
+        class App extends React.Component {
+          render() {
+            return <h1>Hello World</h1>;
+          }
+        }
+        let mountComp = document.querySelector('#app');
+        ReactDOM.render(<App />, mountComp);
       </script>
     </div>
   </body>
