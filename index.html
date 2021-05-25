@@ -4,23 +4,112 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="Timeline.css" rel="stylesheet" type="text/css" />
+
     <title>Document</title>
   </head>
   <body>
-    <div id="app">
-      <script type="text/babel">
-        class App extends React.Component {
-          render() {
-            return <h1>Hello World</h1>;
-          }
-        }
-        let mountComp = document.querySelector('#app');
-        ReactDOM.render(<App />, mountComp);
-      </script>
+    <div class="demo">
+      <div id="app"></div>
     </div>
+
+    <script type="text/babel">
+      class Timeline extends React.Component {
+        render() {
+          return (
+            <div className="notificationsFrame">
+              <div className="panel">
+                <div className="header">
+                  <div className="menuIcon">
+                    <div className="dashTop" />
+                    <div className="dashBottom" />
+                    <div className="circle" />
+                  </div>
+
+                  <span className="title">Timeline</span>
+
+                  <input
+                    type="text"
+                    className="searchInput"
+                    placeholder="Search ..."
+                  />
+
+                  <div className="fa fa-search searchIcon" />
+                </div>
+                <div className="content">
+                  <div className="line" />
+                  <div className="item">
+                    <div className="avatar">
+                      <img
+                        alt="doug"
+                        src="http://www.croop.cl/UI/twitter/images/doug.jpg"
+                      />
+                    </div>
+
+                    <span className="time">An hour ago</span>
+                    <p>Ate lunch</p>
+                  </div>
+
+                  <div className="item">
+                    <div className="avatar">
+                      <img
+                        alt="doug"
+                        src="http://www.croop.cl/UI/twitter/images/doug.jpg"
+                      />
+                    </div>
+
+                    <span className="time">10 am</span>
+                    <p>Read Day two article</p>
+                  </div>
+
+                  <div className="item">
+                    <div className="avatar">
+                      <img
+                        alt="doug"
+                        src="http://www.croop.cl/UI/twitter/images/doug.jpg"
+                      />
+                    </div>
+
+                    <span className="time">10 am</span>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry.
+                    </p>
+                  </div>
+
+                  <div className="item">
+                    <div className="avatar">
+                      <img
+                        alt="doug"
+                        src="http://www.croop.cl/UI/twitter/images/doug.jpg"
+                      />
+                    </div>
+
+                    <span className="time">2:21 pm</span>
+                    <p>
+                      Lorem Ipsum has been the industry's standard dummy text
+                      ever since the 1500s, when an unknown printer took a
+                      galley of type and scrambled it to make a type specimen
+                      book.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+      }
+      //let mountComp = document.querySelector('#demo');
+      ReactDOM.render(<Timeline />, document.querySelector('#app'));
+    </script>
   </body>
 </html>
